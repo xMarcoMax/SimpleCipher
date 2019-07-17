@@ -115,6 +115,7 @@ public class Cipher {
         }
         return decrypted.toString();
     }
+    //Cifratura ancora da implementare
 //	public String poliCipher(String s, String key) {
 //		return null;
 //	}
