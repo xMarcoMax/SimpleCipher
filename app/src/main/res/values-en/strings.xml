@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simple Cipher</string>
+    <string name="textUp">Insert sentence to encrypt</string>
+    <string name="caesar">Caesar\'s Cipher</string>
+    <string name="mono">Monoalphabetical Cipher</string>
+</resources>

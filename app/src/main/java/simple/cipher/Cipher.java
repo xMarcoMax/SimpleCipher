@@ -3,18 +3,14 @@ import java.util.List;
 
 public class Cipher {
     private List<Character> alpha;
-    private enum Type{CAESAR, MONO, POLI};
-    Type type;
 
     public Cipher(Alphabet a) {
-        this.type = null;
         this.alpha =  a.alpha;
     }
 
     /**
      * Encrypt a sentence using the Caesar's Cipher
      * @param s The string to be encrypted
-     * @param alpha The choosen alphabet (latin, cyrillic, etc.) to use for the encryption
      * @param k The position of the substituting letter with respect to the one to be replaced
      * */
     public String caesarCipher(String s, int k) {
@@ -45,7 +41,6 @@ public class Cipher {
     /**
      * Decrypt a sentence encrypted using the Caesar's Cipher
      * @param s The string to be decrypted
-     * @param alpha The choosen alphabet (latin, cyrillic, etc.) used for the original encryption
      * @param k The position of the substituting letter with respect to the one to be replaced used in the encryption
      * */
     public String caesarDecrypt(String s, int k) {
@@ -76,7 +71,7 @@ public class Cipher {
     /**
      * Encrypt a sentence using the monoalphabetic cipher
      * @param s The string to be encrypted
-     * @param alpha The choosen alphabet (latin, cyrillic, etc.), already permutated, to use for the encryption
+     * @param permAlpha The choosen alphabet (latin, cyrillic, etc.), already permutated, to use for the encryption
      * */
     public String monoCipher(String s, List<Character> permAlpha) {
         StringBuilder crypted = new StringBuilder();
@@ -100,7 +95,7 @@ public class Cipher {
     /**
      * Decrypt a sentence encrypted using the monoalphabetic cipher
      * @param s The string to be decrypted
-     * @param alpha The choosen alphabet (latin, cyrillic, etc.), already permutated, used for the encryption
+     * @param permAlpha The choosen alphabet (latin, cyrillic, etc.), already permutated, used for the encryption
      * */
     public String monoDecrypt(String s, List<Character> permAlpha) {
         StringBuilder decrypted = new StringBuilder();
