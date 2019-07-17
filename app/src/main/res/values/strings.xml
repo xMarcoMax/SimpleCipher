@@ -3,4 +3,5 @@
     <string name="textUp">Inserire frase da cifrare</string>
     <string name="caesar">Cifratura di Cesare</string>
     <string name="mono">Cifratura Monoalfabetica</string>
+    <string name="textDown">Testo Cifrato:</string>
 </resources>
