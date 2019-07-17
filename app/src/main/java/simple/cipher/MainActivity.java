@@ -27,27 +27,31 @@ public class MainActivity extends AppCompatActivity {
         mono.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText plain = (EditText) findViewById(R.id.cifrare);
-                TextView crypted = (TextView) findViewById(R.id.cifrato);
+                EditText plain = findViewById(R.id.cifrare);
+                TextView crypt = findViewById(R.id.cifrato);
+                TextView perm = findViewById(R.id.permAlphaUsed);
 
                 List<Character> alpha = new ArrayList<>(a.alpha);
                 Collections.shuffle(alpha);
                 String s = c.monoCipher(plain.getText().toString(),alpha);
 
-                crypted.setText(s);
-
+                crypt.setText(s);
+                perm.setText(alpha.toString());
+                perm.setVisibility(View.VISIBLE);
             }
         });
 
         caesar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText plain = (EditText) findViewById(R.id.cifrare);
-                TextView crypted = (TextView) findViewById(R.id.cifrato);
+                EditText plain = findViewById(R.id.cifrare);
+                TextView crypt = findViewById(R.id.cifrato);
+                TextView perm = findViewById(R.id.permAlphaUsed);
 
                 String s = c.caesarCipher(plain.getText().toString(),5);
 
-                crypted.setText(s);
+                crypt.setText(s);
+                perm.setVisibility(View.INVISIBLE);
             }
         });
 

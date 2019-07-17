@@ -59,8 +59,8 @@
 
     <TextView
         android:id="@+id/cifrato"
-        android:layout_width="307dp"
-        android:layout_height="271dp"
+        android:layout_width="293dp"
+        android:layout_height="89dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
@@ -70,4 +70,20 @@
         app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDown" />
+
+    <TextView
+        android:id="@+id/permAlphaUsed"
+        android:layout_width="308dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        android:textSize="11sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cifrato" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
