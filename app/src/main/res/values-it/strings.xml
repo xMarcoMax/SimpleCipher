@@ -6,4 +6,5 @@
     <string name="mono">Cifrario Monoalfabetico</string>
     <string name="textDown">Testo cifrato:</string>
     <string name="poli">Cifrario Polialfabetico</string>
+    <string name="reset">Resetta</string>
 </resources>

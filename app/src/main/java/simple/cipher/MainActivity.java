@@ -1,7 +1,9 @@
 package simple.cipher;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,8 +24,11 @@ public class MainActivity extends AppCompatActivity {
         Button caesar = findViewById(R.id.caesar);
         Button mono = findViewById(R.id.mono);
         Button poli = findViewById(R.id.poli);
+        Button reset = findViewById(R.id.reset);
         final Alphabet a = new Alphabet();
         final Cipher c = new Cipher(a);
+
+        reset.setVisibility(View.INVISIBLE);
 
         mono.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 crypt.setText(s);
                 desc.setText("PERMUTAZIONE USATA"+System.lineSeparator()+alpha.toString());
                 desc.setVisibility(View.VISIBLE);
+                Button b = findViewById(R.id.reset);
+                b.setVisibility(View.VISIBLE);
             }
         });
 
@@ -49,11 +56,14 @@ public class MainActivity extends AppCompatActivity {
                 TextView crypt = findViewById(R.id.cifrato);
                 TextView desc = findViewById(R.id.desc);
 
-                String s = c.caesarCipher(plain.getText().toString(),5);
+                int n = (int)(Math.random()*25+1);
+                String s = c.caesarCipher(plain.getText().toString(),n);
 
                 crypt.setText(s);
-                desc.setText("CHIAVE = 5");
+                desc.setText("CHIAVE = "+n);
                 desc.setVisibility(View.VISIBLE);
+                Button b = findViewById(R.id.reset);
+                b.setVisibility(View.VISIBLE);
             }
         });
 
@@ -69,6 +79,24 @@ public class MainActivity extends AppCompatActivity {
                 crypt.setText(s);
                 desc.setText("CHIAVE = 'ciao'");
                 desc.setVisibility(View.VISIBLE);
+                Button b = findViewById(R.id.reset);
+                b.setVisibility(View.VISIBLE);
+            }
+        });
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText plain = findViewById(R.id.cifrare);
+                TextView crypt = findViewById(R.id.cifrato);
+                TextView desc = findViewById(R.id.desc);
+
+                plain.setText("");
+                crypt.setText("");
+                desc.setText("");
+                desc.setVisibility(View.INVISIBLE);
+                Button b = findViewById(R.id.reset);
+                b.setVisibility(View.INVISIBLE);
             }
         });
 

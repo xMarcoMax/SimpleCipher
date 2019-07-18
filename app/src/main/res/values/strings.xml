@@ -5,4 +5,5 @@
     <string name="cifrare">Sentence to encrypt...</string>
     <string name="textDown">Encrypted Text:</string>
     <string name="poli">Polialphabetical Cipher</string>
+    <string name="reset">Reset</string>
 </resources>
