@@ -15,6 +15,10 @@ public class Alphabet {
         }
     }
 
+    public Alphabet(List<Character> alpha) {
+        this.alpha = alpha;
+    }
+
     public List<Character> generatePermutation() {
         List<Character> ret = new ArrayList<>(alpha);
         Collections.shuffle(ret);
