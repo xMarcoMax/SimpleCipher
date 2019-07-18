@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Semplice Cifrario</string>
+    <string name="caesar">Cifrario di Cesare</string>
+    <string name="cifrare">Frase da cifrare...</string>
+    <string name="mono">Cifrario Monoalfabetico</string>
+    <string name="textDown">Testo cifrato:</string>
+    <string name="poli">Cifrario Polialfabetico</string>
+</resources>

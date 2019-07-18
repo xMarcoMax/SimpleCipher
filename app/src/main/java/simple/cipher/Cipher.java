@@ -21,6 +21,23 @@ public class Cipher {
         int pos;
 
         s = s.toUpperCase();
+        StringBuilder conv = new StringBuilder();
+        for(int i = 0; i<s.length(); ++i){
+            if(s.charAt(i)=='À' || s.charAt(i)=='Á')
+                conv.append('A');
+            else if(s.charAt(i)=='È' || s.charAt(i)=='É')
+                conv.append('E');
+            else if(s.charAt(i)=='Ì' || s.charAt(i)=='Í')
+                conv.append('I');
+            else if(s.charAt(i)=='Ò' || s.charAt(i)=='Ó')
+                conv.append('O');
+            else if(s.charAt(i)=='Ù' || s.charAt(i)=='Ú')
+                conv.append('U');
+            else
+                conv.append(s.charAt(i));
+        }
+
+        s = conv.toString();
         for(int i = 0; i<s.length();++i) {
             if(Character.isLetter(s.charAt(i))) {
                 for(char c:alpha) {
@@ -80,6 +97,23 @@ public class Cipher {
         StringBuilder crypted = new StringBuilder();
 
         s = s.toUpperCase();
+        StringBuilder conv = new StringBuilder();
+        for(int i = 0; i<s.length(); ++i){
+            if(s.charAt(i)=='À' || s.charAt(i)=='Á')
+                conv.append('A');
+            else if(s.charAt(i)=='È' || s.charAt(i)=='É')
+                conv.append('E');
+            else if(s.charAt(i)=='Ì' || s.charAt(i)=='Í')
+                conv.append('I');
+            else if(s.charAt(i)=='Ò' || s.charAt(i)=='Ó')
+                conv.append('O');
+            else if(s.charAt(i)=='Ù' || s.charAt(i)=='Ú')
+                conv.append('U');
+            else
+                conv.append(s.charAt(i));
+        }
+
+        s = conv.toString();
         for(int i = 0; i<s.length();++i) {
             if(Character.isLetter(s.charAt(i))) {
                 for(char c:alpha) {
@@ -142,6 +176,23 @@ public class Cipher {
             poli.put(c, new Alphabet(fin));
         }
         s=s.toUpperCase();
+        StringBuilder conv = new StringBuilder();
+        for(int i = 0; i<s.length(); ++i){
+            if(s.charAt(i)=='À' || s.charAt(i)=='Á')
+                conv.append('A');
+            else if(s.charAt(i)=='È' || s.charAt(i)=='É')
+                conv.append('E');
+            else if(s.charAt(i)=='Ì' || s.charAt(i)=='Í')
+                conv.append('I');
+            else if(s.charAt(i)=='Ò' || s.charAt(i)=='Ó')
+                conv.append('O');
+            else if(s.charAt(i)=='Ù' || s.charAt(i)=='Ú')
+                conv.append('U');
+            else
+                conv.append(s.charAt(i));
+        }
+
+        s = conv.toString();
         int k = 0;
         for(int i = 0;i<s.length();++i) {
             if(Character.isLetter(s.charAt(i))) {

@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">Semplice Cifrario</string>
-    <string name="textUp">Inserire frase da cifrare</string>
-    <string name="caesar">Cifratura di Cesare</string>
-    <string name="mono">Cifratura Monoalfabetica</string>
-    <string name="textDown">Testo Cifrato:</string>
+    <string name="app_name">Simple Cipher</string>
+    <string name="caesar">Caesar\'s Cipher</string>
+    <string name="mono">Monoalphabetical Cipher</string>
+    <string name="cifrare">Sentence to encrypt...</string>
+    <string name="textDown">Encrypted Text:</string>
+    <string name="poli">Polialphabetical Cipher</string>
 </resources>
