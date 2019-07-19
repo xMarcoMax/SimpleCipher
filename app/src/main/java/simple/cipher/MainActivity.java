@@ -2,13 +2,19 @@ package simple.cipher;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,8 +33,23 @@ public class MainActivity extends AppCompatActivity {
         final Alphabet a = new Alphabet();
         final Cipher c = new Cipher(a);
 
-        FileInputStream fis = null;
+        final List<String> lines = new ArrayList<>();
 
+
+        try {
+            Resources res = getResources();
+            InputStream is = res.openRawResource(R.raw.random_words);
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader br = new BufferedReader(isr);
+            String line;
+
+            while( (line=br.readLine())!=null ){
+                lines.add(line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         reset.setVisibility(View.INVISIBLE);
 
@@ -76,10 +97,12 @@ public class MainActivity extends AppCompatActivity {
                 TextView crypt = findViewById(R.id.cifrato);
                 TextView desc = findViewById(R.id.desc);
 
-                String s = c.poliCipher(plain.getText().toString(),"ciao");
+                int n = (int)(Math.random()*lines.size());
+                String key = lines.get(n);
+                String s = c.poliCipher(plain.getText().toString(),key);
 
                 crypt.setText(s);
-                desc.setText("CHIAVE = 'ciao'");
+                desc.setText("CHIAVE = "+key);
                 desc.setVisibility(View.VISIBLE);
                 Button b = findViewById(R.id.reset);
                 b.setVisibility(View.VISIBLE);
