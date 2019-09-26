@@ -76,6 +76,7 @@ public class CipherActivity extends AppCompatActivity {
                 EditText plain = findViewById(R.id.cifrare);
                 TextView crypt = findViewById(R.id.cifrato);
                 TextView desc = findViewById(R.id.desc);
+                //
 
                 int n = (int)(Math.random()*25+1);
                 String s = c.caesarCipher(plain.getText().toString(),n);
